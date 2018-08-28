@@ -2,6 +2,8 @@ package com.netmind.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.runners.MethodSorters;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -46,7 +48,7 @@ public class ClienteDaoTest {
 		cliente.setIdCliente(IDCLIENTE);
 		cliente.setNombre("Neus");
 		cliente.setApellidos("Lastone");
-		cliente.setDni("73223212t");
+		cliente.setDni("73223212z");
 		clienteDao = new ClienteDao();
 		Cliente expectedReturn = clienteDao.modify(cliente);
 		IDCLIENTE=expectedReturn.getIdCliente();
@@ -54,6 +56,31 @@ public class ClienteDaoTest {
 		assertTrue(expectedReturn.getNombre().equals("Neus"));
 	}
 	
+	@Test
+	public void test3GetAll() {
+		clienteDao = new ClienteDao();
+		List<Cliente> clientes = clienteDao.getAll();
+		assertTrue(clientes.size()> 0);
+		
+		
+	}
+	
+	@Test
+	public void test4GetById() {
+		clienteDao = new ClienteDao();
+		Cliente clienteExtracted = clienteDao.getById(IDCLIENTE);
+		assertTrue(clienteExtracted !=null);
+		assertTrue(clienteExtracted.getApellidos().equals("Lastone"));
+		
+	}
+	
+	@Test
+	public void test5RemoveClientbyId() {
+		clienteDao = new ClienteDao();
+		int idCliente = clienteDao.remove(IDCLIENTE);
+		assertTrue(clienteDao.getById(IDCLIENTE) == null);
+		
+	}
 
 
 }
