@@ -45,13 +45,13 @@ public class ClienteDaoTest {
 		cliente = new Cliente();
 		cliente.setIdCliente(IDCLIENTE);
 		cliente.setNombre("Neus");
-		cliente.setApellidos("Membrado");
+		cliente.setApellidos("Lastone");
 		cliente.setDni("73223212t");
 		clienteDao = new ClienteDao();
 		Cliente expectedReturn = clienteDao.modify(cliente);
 		IDCLIENTE=expectedReturn.getIdCliente();
 		assertTrue(expectedReturn !=null);
-		assertTrue(IDCLIENTE > 0);
+		assertTrue(expectedReturn.getNombre().equals("Neus"));
 	}
 	
 
