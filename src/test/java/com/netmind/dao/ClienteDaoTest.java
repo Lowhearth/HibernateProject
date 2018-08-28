@@ -77,7 +77,7 @@ public class ClienteDaoTest {
 	@Test
 	public void test5RemoveClientbyId() {
 		clienteDao = new ClienteDao();
-		int idCliente = clienteDao.remove(IDCLIENTE);
+		clienteDao.remove(IDCLIENTE);
 		assertTrue(clienteDao.getById(IDCLIENTE) == null);
 		
 	}
