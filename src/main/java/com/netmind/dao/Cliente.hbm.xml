@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 30-jul-2011 18:14:06 by Hibernate Tools 3.2.1.GA -->
+
+<hibernate-mapping>
+	<class name="com.netmind.dao.Cliente" table="cliente">
+      <meta attribute="class-description">
+         This class contains the client detail. 
+      </meta>
+      <id name="idCliente" type="int" column="idCliente">
+         <generator class="native"/>
+      </id>
+      <property name="nombre" column="nombre" type="string"/>
+      <property name="apellidos" column="apellidos" type="string"/>
+      <property name="dni" column="dni" type="string"/>
+   </class>
+</hibernate-mapping>
